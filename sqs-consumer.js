@@ -63,9 +63,7 @@ class S3EventConsumer {
 
   async processMessage(message) {
     try {
-      console.log("Message", message);
       const body = JSON.parse(message.Body);
-      console.log("BODY here", body);
       if (!body.Records || body.event === "s3:TestEvent") {
         return;
       }
